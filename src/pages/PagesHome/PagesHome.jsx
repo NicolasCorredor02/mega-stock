@@ -1,8 +1,8 @@
-import ItemListContainer from "./components/ItemListContainer"
+import ItemListContainer from "@pages/PagesHome/components/ItemListContainer"
 
 function PagesHome() {
     return(
-        <div className="container mx-auto w-full md:border-0 md:static px-3 py-3 md:px-0">
+        <div className="main-layout">
            <ItemListContainer></ItemListContainer> 
         </div>
     )

@@ -9,10 +9,14 @@ body {
   min-height: 100vh;
 }
 
-.MainLayout{
+.abolute-layout{
   display: grid;
   min-height: 100dvh;
   grid-template-rows:auto 1fr auto;
+}
+
+.main-layout{
+  @apply container min-h-svh mx-auto w-full md:border-0 md:static px-3 py-3 md:px-0
 }
 
 h1 {

@@ -1,4 +1,4 @@
-import Item from "./Item"
+import Item from "@pages/PagesHome/components/Item"
 
 function ItemList({products}) {
     return(

@@ -1,4 +1,4 @@
-import Categories from "./Categories"
+import Categories from "@components/Navbar/components/Categories"
 
 
 function CategoriesList({categories}) {
