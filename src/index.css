@@ -16,12 +16,19 @@ body {
 }
 
 .main-layout{
-  @apply container min-h-svh mx-auto w-full md:border-0 md:static px-3 py-3 md:px-0
+  @apply container min-h-svh mx-auto w-full md:border-0 px-3 py-3 md:px-0
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+.main-section-layout{
+  @apply container mx-auto w-full md:border-0 px-3 py-3 md:px-0
+}
+
+.main-section-container{
+  @apply flex flex-col mt-14 gap-10
+}
+
+.h1-title-page{
+  @apply text-3xl font-semibold text-center my-4
 }
 
 @layer base {

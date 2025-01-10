@@ -11,7 +11,7 @@ function Item({ product }) {
     }
  
   return (
-    <div className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition duration-300">
+    <div className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition duration-300 h-[300px] md:h-[350px]"> 
       <img
         src={product.image}
         alt={product.description}

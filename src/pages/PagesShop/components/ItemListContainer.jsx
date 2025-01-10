@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import ItemList from "@pages/PagesHome/components/ItemList";
+import ItemList from "@pages/PagesShop/components/ItemList";
 import { useParams } from "react-router";
 
 function ItemListContainer() {
@@ -17,7 +17,7 @@ function ItemListContainer() {
 
   return (
     <section>
-      <h1 className="text-3xl font-semibold text-center my-4">Productos</h1>
+      <h1 className="h1-title-page">Products</h1>
       <ItemList products={products}></ItemList>
     </section>
   );

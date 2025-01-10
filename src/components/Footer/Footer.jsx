@@ -15,7 +15,7 @@ function Footer() {
           <div className="justify-between items-center gap-12 md:flex">
             <div className="flex-1 max-w-lg">
               <h3 className="text-primary text-2xl font-bold">
-                Suscríbete y entérate de todas las novedades y descuentos
+              Subscribe and get all the latest news and discounts
               </h3>
             </div>
             <div className="flex-1 mt-6 md:mt-0">

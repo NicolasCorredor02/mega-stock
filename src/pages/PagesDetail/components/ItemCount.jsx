@@ -3,17 +3,22 @@ import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { faMinus } from "@fortawesome/free-solid-svg-icons";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
-import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 
-function ItemCount() {
+
+function ItemCount({ onCountChange }) {
   const [count, setCount] = useState(1);
   const handleCountSum = () => {
-    setCount(count + 1);
+    const newCount = count + 1;
+    setCount(newCount);
+    onCountChange(newCount);
   };
 
   const handleCountSub = () => {
     if (count > 1) {
-      setCount(count - 1);
+      const newCount = count - 1;
+      setCount(newCount);
+      onCountChange(newCount);
     }
   };
 
@@ -27,15 +32,9 @@ function ItemCount() {
       >
         <FontAwesomeIcon icon={faMinus} />
       </Button>
-      <Input
-        type="number"
-        className="w-16 text-center"
-        value={count}
-        onChange={(e) => {
-          const newValue = Number(e.target.value);
-          setCount(Math.max(0, newValue));
-        }}
-      />
+      <Label className="w-16 text-center">
+        {count}
+      </Label>
       <Button onClick={handleCountSum} size="icon">
         <FontAwesomeIcon icon={faPlus} />
       </Button>

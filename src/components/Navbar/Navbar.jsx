@@ -38,7 +38,7 @@ function Navbar() {
               </SheetContent>
             </Sheet>
             <Link to="/">
-              <p className="text-2xl md:text-5xl">Mega Stock</p>
+              <p className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl">Mega Stock</p>
             </Link>
           </div>
           <div className="hidden md:inline-flex items-center space-x-2">
@@ -50,11 +50,8 @@ function Navbar() {
           <div className="flex justify-end items-center gap-3 text-xl">
             <Sheet>
               <SheetTrigger>
-                <Button variant="ghost">
-                  <FontAwesomeIcon
-                    icon={faMagnifyingGlass}
-                    className="md:hidden"
-                  />
+                <Button variant="ghost" className="md:hidden">
+                  <FontAwesomeIcon icon={faMagnifyingGlass} />
                 </Button>
               </SheetTrigger>
               <SheetContent side="top" className="inline-flex gap-0 p-0 h-20">
@@ -70,11 +67,9 @@ function Navbar() {
             </Sheet>
             <Button variant="ghost">
               <FontAwesomeIcon icon={faUser} />
-              <span className="hidden md:inline">Cuenta</span>
+              <span className="hidden md:inline">Account</span>
             </Button>
-            <Button className="relative" variant="ghost">
-              <CartButton></CartButton>
-            </Button>
+            <CartButton />
           </div>
         </div>
         <div className="hidden md:flex gap-5 place-self-center px-3 py-3 md:px-0">

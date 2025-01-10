@@ -6,23 +6,23 @@ function MapListContainer() {
   const footerNavs = [
     {
       id: 1,
-      label: "Contacto",
+      label: "Contact",
       items: [
         {
           id: 1,
           href: "#",
-          name: "contacto",
+          name: "contact",
         },
       ],
     },
     {
       id: 2,
-      label: "Legales",
+      label: "Legal",
       items: [
         {
           id: 1,
           href: "#",
-          name: "legales",
+          name: "legal",
         },
       ],
     },

@@ -15,8 +15,21 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { useState, useContext } from "react";
+import { CartContext } from "@/context/cart/cartContext";
 
 function ItemDetail({ product }) {
+  const [stateItemCount, setStateItemCount] = useState(1);
+  const { addToCart } = useContext(CartContext);
+
+  const handleAddToCart = () => {
+    addToCart(product, stateItemCount)
+  }
+
+  const handleStateCount = (newCount) => {
+    setStateItemCount(newCount);
+  };
+
   return (
     <section className="grid grid-cols-1 md:grid-cols-2 gap-14">
       <Carousel>
@@ -35,7 +48,7 @@ function ItemDetail({ product }) {
       <div className="flex flex-col gap-10 p-5">
         <h2 className="text-2xl font-bold">{product.title}</h2>
         <p className="text-4xl font-semibold">$ {product.price}</p>
-        <ItemCount />
+        <ItemCount onCountChange={handleStateCount} />
         <Accordion type="single" collapsible>
           <AccordionItem value="item-1">
             <AccordionTrigger className="text-xl">Description</AccordionTrigger>
@@ -44,7 +57,7 @@ function ItemDetail({ product }) {
             </AccordionContent>
           </AccordionItem>
         </Accordion>
-        <Button className="md:w-52">
+        <Button onClick={handleAddToCart} className="md:w-52">
           <FontAwesomeIcon icon={faCartShopping} />
           Add Cart
         </Button>

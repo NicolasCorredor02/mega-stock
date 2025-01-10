@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/card";
 import { useNavigate } from "react-router";
 
-function Item({ product }) {
+function CardProduct({ product }) {
   const navigate = useNavigate();
 
   const handleNavigation = () => {
@@ -19,17 +19,17 @@ function Item({ product }) {
   return (
     <Card onClick={handleNavigation} className="cursor-pointer">
       <CardHeader>
-        <CardTitle className="flex justify-center">
+        <CardTitle className="flex justify-center mb-10">
           <img
             src={product.image}
             alt={product.title}
-            className="max-h-[250px]"
+            className="h-64 object-cover transition duration-300 hover:scale-110"
           />
         </CardTitle>
         <CardDescription>{product.title}</CardDescription>
       </CardHeader>
       <CardContent>
-        <p>${product.price}</p>
+        <p className="text-xl font-semibold">${product.price}</p>
       </CardContent>
       <CardFooter>
         <Badge>{product.category}</Badge>
@@ -38,4 +38,4 @@ function Item({ product }) {
   );
 }
 
-export default Item;
+export default CardProduct;
