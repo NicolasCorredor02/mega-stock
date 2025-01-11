@@ -37,7 +37,7 @@ function ItemCartTable({ cartProducts = [] }) {
   }
 
   return (
-    <section className="h-[80vh] overflow-auto">
+    <section className="overflow-auto">
       {cartProducts.map((product) => (
         <CartItem key={product.id} product={product}></CartItem>
       ))}

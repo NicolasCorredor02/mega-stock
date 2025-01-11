@@ -5,7 +5,7 @@ function CategoriesList({categories}) {
     return(
         <>
             {categories.map(category => (
-                <Categories key={categories.indexOf(category)} category={category}></Categories>
+                <Categories key={category.id} category={category}></Categories>
             ))}   
         </>
     )

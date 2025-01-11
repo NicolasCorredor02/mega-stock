@@ -1,6 +1,6 @@
 //Hooks
 import { useEffect, useState } from "react";
-
+import { getCategories } from "@/firebase/db";
 import {
   NavigationMenu,
   NavigationMenuList,
@@ -12,9 +12,9 @@ function CategoriesListContainer() {
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
-    fetch("https://fakestoreapi.com/products/categories")
-      .then((res) => res.json())
-      .then((json) => setCategories(json));
+
+      getCategories()
+      .then(categories => setCategories(categories))
   }, []);
 
   return (

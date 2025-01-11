@@ -26,7 +26,7 @@ function CardProduct({ product }) {
             className="h-64 object-cover transition duration-300 hover:scale-110"
           />
         </CardTitle>
-        <CardDescription>{product.title}</CardDescription>
+        <CardDescription className="text-base md:text-lg font-semibold">{product.title}</CardDescription>
       </CardHeader>
       <CardContent>
         <p className="text-xl font-semibold">${product.price}</p>

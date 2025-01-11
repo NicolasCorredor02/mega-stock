@@ -1,18 +1,16 @@
 import ItemRelated from "@/pages/PagesDetail/components/ItemRelated";
 import { useEffect, useState } from "react";
+import { getProducts } from "@/firebase/db";
 
 function ItemRelatedContainer({ category }) {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    fetch(`https://fakestoreapi.com/products/category/${category}`)
-      .then((res) => res.json())
-      .then((json) => setProducts(json));
+    getProducts(category)
+    .then((products) => setProducts(products));
   }, [category]);
 
-  return (
-    <ItemRelated itemsRelated={products}></ItemRelated>
-  );
+  return <ItemRelated itemsRelated={products}></ItemRelated>;
 }
 
 export default ItemRelatedContainer;

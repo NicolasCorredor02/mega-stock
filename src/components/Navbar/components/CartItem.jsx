@@ -27,25 +27,24 @@ function CartItem({ product, variant = "default" }) {
   const styles = {
     default: {
       wrapper:
-        "h-auto  grid auto-rows-auto md:grid-rows-1 grid-flow-col gap-8 p-4 bg-white border-b-2 border-gray-200 max-w-4xl",
+        "h-auto grid auto-rows-auto md:grid-rows-1 grid-flow-col gap-8 p-4 bg-background border-b-2 border-border",
       imageContainer: "row-span-2 max-w-40",
       detailContainer: "flex flex-col row-span-1 w-20 md:w-40",
       priceContainer: "row-span-1",
-      countContainer:
-        "row-span-1 flex justify-between md:justify-normal gap-2 items-center",
+      countContainer: "row-span-1 flex justify-between md:justify-normal gap-2 items-center",
       removeContainer: "row-span-1 flex justify-center md:order-last",
       totalContainer: "hidden md:block md:row-span-3",
       image: "w-full h-32 object-cover cursor-pointer",
-      title: "text-sm md:text-md lg:text-lg text-primary-foreground cursor-pointer",
+      title: "text-sm md:text-md lg:text-lg text-foreground cursor-pointer",
       category: "text-sm md:text-md lg:text-lg text-gray-500",
-      price: "text-sm md:text-md lg:text-lg text-gray-500",
+      price: "text-xl md:text-md lg:text-lg text-gray-500",
       count: "text-sm md:text-md lg:text-lg w-6 text-center",
       buttonCount: "w-8 h-8 md:w-6 md:h-6 lg:w-8 lg:h-8",
-      total: "text-sm md:text-md lg:text-lg text-primary-foreground",
+      total: "text-sm md:text-md lg:text-lg text-foreground",
     },
     sidebar: {
       wrapper:
-        "h-auto max-h-80 grid auto-rows-auto grid-flow-col gap-2 p-2 bg-white border-b-2 border-gray-200",
+        "h-auto max-h-80 grid auto-rows-auto grid-flow-col gap-2 p-2 bg-background border-b-2 border-border",
       imageContainer: "row-span-2 max-w-20",
       detailContainer: "flex flex-col row-span-1 w-20 md:w-40",
       priceContainer: "row-span-1 ",
@@ -53,7 +52,7 @@ function CartItem({ product, variant = "default" }) {
       removeContainer: "row-span-1 flex justify-center md:order-last",
       totalContainer: "hidden md:block md:row-span-3",
       image: "w-full h-32 object-cover cursor-pointer",
-      title: "text-xs md:text-base text-primary-foreground cursor-pointer",
+      title: "text-xs md:text-base text-foreground cursor-pointer",
       category: "text-xs md:text-base text-gray-500",
       price: "text-sm md:text-lg text-gray-500",
       count: "text-xs md:text-base w-6 md:w-8 text-center",
@@ -105,7 +104,7 @@ function CartItem({ product, variant = "default" }) {
         </TableCell>
         <TableCell>
           <Label className={currentStyle.total}>
-            ${product.price * product.quantity}
+            ${(product.price * product.quantity).toFixed(2)}
           </Label>
         </TableCell>
         <TableCell>

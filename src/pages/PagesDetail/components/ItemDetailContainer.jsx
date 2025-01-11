@@ -2,15 +2,15 @@ import ItemDetail from "@/pages/PagesDetail/components/ItemDetail";
 import ItemRelatedContainer from "@/pages/PagesDetail/components/ItemRelatedContainer";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
+import { getProductById } from "@/firebase/db";
 
 function ItemDetailContainer() {
   const [product, setProduct] = useState({});
   const { id } = useParams();
 
   useEffect(() => {
-    fetch(`https://fakestoreapi.com/products/${id}`)
-      .then((res) => res.json())
-      .then((json) => setProduct(json));
+    getProductById(id)
+    .then(product => setProduct(product));
   }, [id]);
 
   return (

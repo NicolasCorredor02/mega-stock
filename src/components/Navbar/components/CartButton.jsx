@@ -60,7 +60,7 @@ function CartButton() {
                 <CartItemListContainer />
               </div>
               <SheetFooter>
-                <Label className="text-lg font-bold">Total: $ {getTotal()}</Label>
+                <Label className="text-lg font-bold">Total: $ {getTotal().toFixed(2)}</Label>
                 <SheetClose asChild>
                   <Button onClick={handleNavigation}>Check out</Button>
                 </SheetClose>

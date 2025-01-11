@@ -4,7 +4,7 @@ function ItemCategory({ categories }) {
   return (
     <>
       {categories.map((category) => (
-        <CardCategory key={categories.indexOf(category)} category={category} />
+        <CardCategory key={category.id} category={category} />
       ))}
     </>
   );

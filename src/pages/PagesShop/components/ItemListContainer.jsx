@@ -1,19 +1,19 @@
 import { useEffect, useState } from "react";
 import ItemList from "@pages/PagesShop/components/ItemList";
 import { useParams } from "react-router";
+import { getProducts } from "@/firebase/db";
 
 function ItemListContainer() {
   const [products, setProducts] = useState([]);
   const { category } = useParams();
 
-  const allProducts = "https://fakestoreapi.com/products";
-  const categoryProducts = `https://fakestoreapi.com/products/category/${category}`;
-
   useEffect(() => {
-    fetch(category ? categoryProducts : allProducts)
-      .then((res) => res.json())
-      .then((json) => setProducts(json));
-  }, [category, categoryProducts]);
+    category
+      ? getProducts(category).then((products) =>
+          setProducts(products)
+        )
+      : getProducts().then((products) => setProducts(products));
+  }, [category]);
 
   return (
     <section>
