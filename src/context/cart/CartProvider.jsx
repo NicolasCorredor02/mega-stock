@@ -12,7 +12,7 @@ function CartProvider({ children }) {
 
   const getTotal = () => {
     return cart.reduce((accumulator, item) => {
-      return accumulator + item.price * item.quantity;
+      return parseFloat(accumulator + item.price * item.quantity);
     }, 0);  
   }
 
@@ -70,9 +70,11 @@ function CartProvider({ children }) {
     setCart(newCart);
   };
 
+  const emptyCart = () => setCart([])
+
   return (
     <CartContext.Provider
-      value={{ cart, getQuantity, getTotal, addToCart, addQuantity, discountQuantity, removeFromCart }}
+      value={{ cart, getQuantity, getTotal, addToCart, addQuantity, discountQuantity, removeFromCart, emptyCart }}
     >
       {children}
     </CartContext.Provider>

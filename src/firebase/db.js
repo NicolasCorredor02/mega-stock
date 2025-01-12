@@ -5,6 +5,7 @@ import {
   query,
   where,
   collection,
+  addDoc,
   getDocs,
   getFirestore,
 } from "firebase/firestore";
@@ -13,6 +14,7 @@ import { app } from "@/firebase/config";
 const db = getFirestore(app);
 const productsRef = collection(db, "products");
 const categoriesRef = collection(db, "categories");
+const ordersRef = collection(db, "orders");
 
 export const getProducts = async (category = null) => {
   let q;
@@ -65,3 +67,13 @@ export const getCategories = async () => {
 
   return categories;
 };
+
+
+export const createOrder = async (order) => {
+  try {
+    const docRef = await addDoc(ordersRef, order);
+    return `Order created with the ID: ${docRef.id}`
+  } catch (e) {
+    console.error("Error adding document: ", e);
+  }
+}

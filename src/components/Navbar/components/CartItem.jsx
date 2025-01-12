@@ -17,9 +17,7 @@ function CartItem({ product, variant = "default" }) {
     navigate(`/product/${product.id}`);
   };
 
-  const { addQuantity } = useContext(CartContext);
-  const { discountQuantity } = useContext(CartContext);
-  const { removeFromCart } = useContext(CartContext);
+  const { addQuantity, discountQuantity, removeFromCart } = useContext(CartContext);
 
   const isDesktop = useMediaQuery({ query: "(min-width: 768px)" });
   const isTablet = useMediaQuery({ query: "(max-width: 1023px)" });
