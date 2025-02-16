@@ -19,8 +19,8 @@ function CartItem({ product, variant = "default" }) {
 
   const { addQuantity, discountQuantity, removeFromCart } = useContext(CartContext);
 
-  const isDesktop = useMediaQuery({ query: "(min-width: 768px)" });
-  const isTablet = useMediaQuery({ query: "(max-width: 1023px)" });
+  const isDesktop = useMediaQuery({ query: "(min-width: 1024px)" });
+  const isTablet = useMediaQuery({ query: "(max-width: 1024px)" });
 
   const styles = {
     default: {
@@ -29,7 +29,7 @@ function CartItem({ product, variant = "default" }) {
       imageContainer: "row-span-2 max-w-40",
       detailContainer: "flex flex-col row-span-1 w-20 md:w-40",
       priceContainer: "row-span-1",
-      countContainer: "row-span-1 flex justify-between md:justify-normal gap-2 items-center",
+      countContainer: "row-span-1 flex justify-between lg:justify-normal gap-2 items-center",
       removeContainer: "row-span-1 flex justify-center md:order-last",
       totalContainer: "hidden md:block md:row-span-3",
       image: "w-full h-32 object-cover cursor-pointer",
@@ -37,8 +37,8 @@ function CartItem({ product, variant = "default" }) {
       category: "text-sm md:text-md lg:text-lg text-gray-500",
       price: "text-xl md:text-md lg:text-lg text-gray-500",
       count: "text-sm md:text-md lg:text-lg w-6 text-center",
-      buttonCount: "w-8 h-8 md:w-6 md:h-6 lg:w-8 lg:h-8",
-      total: "text-sm md:text-md lg:text-lg text-foreground",
+      buttonCount: "w-8 h-8 md:w-8 md:h-8 lg:w-6 lg:h-6",
+      total: "text-sm md:text-lg text-foreground",
     },
     sidebar: {
       wrapper:

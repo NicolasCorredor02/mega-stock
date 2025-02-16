@@ -10,11 +10,11 @@ import CartItem from "@/components/Navbar/components/CartItem";
 import { useMediaQuery } from "react-responsive";
 
 function ItemCartTable({ cartProducts = [] }) {
-  const isDesktop = useMediaQuery({ query: "(min-width: 768px)" });
+  const isDesktop = useMediaQuery({ query: "(min-width: 1024px)" });
 
   if (isDesktop) {
     return (
-      <section className="w-full md:w-3/4 h-[80vh] overflow-auto">
+      <section className="w-3/4 h-[80vh] overflow-auto">
         <Table>
           <TableCaption>Shopping cart</TableCaption>
           <TableHeader>

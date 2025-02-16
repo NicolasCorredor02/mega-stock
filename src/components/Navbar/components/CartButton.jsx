@@ -1,5 +1,4 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
+import { ShoppingCart } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { useContext } from "react";
 import { CartContext } from "@/context/cart/cartContext";
@@ -31,7 +30,7 @@ function CartButton() {
     <Sheet>
       <SheetTrigger asChild>
         <Button className="relative" variant="ghost">
-          <FontAwesomeIcon icon={faCartShopping} />
+          <ShoppingCart className="icons-size" />
           <span className="hidden md:inline">Cart</span>
           <Badge
             variant="destructive"
@@ -47,10 +46,9 @@ function CartButton() {
         </SheetHeader>
         <div className="flex flex-col gap-4 py-4">
           {getQuantity() === 0 ? (
-            <div className="flex flex-col">
-              <FontAwesomeIcon
+            <div className="flex justify-center gap-4">
+              <ShoppingCart
                 className="text-slate-400 text-3xl"
-                icon={faCartShopping}
               />
               <p className="text-center">Your shopping cart is empty.</p>
             </div>

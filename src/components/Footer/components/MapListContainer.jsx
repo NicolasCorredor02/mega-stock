@@ -6,37 +6,63 @@ function MapListContainer() {
   const footerNavs = [
     {
       id: 1,
-      label: "Contact",
+      label: "Home",
       items: [
         {
           id: 1,
-          href: "#",
-          name: "contact",
+          href: "/",
+          name: "home",
         },
       ],
     },
     {
       id: 2,
-      label: "Legal",
+      label: "Products",
       items: [
         {
           id: 1,
-          href: "#",
-          name: "legal",
+          href: "/shop/technology",
+          name: "Technology",
+        },
+        {
+          id: 2,
+          href: "/shop/women's clothing",
+          name: "Women's clothing",
+        },
+        {
+          id: 3,
+          href: "/shop/men's clothing",
+          name: "Men's clothing",
+        },
+        {
+          id: 4,
+          href: "/shop/footwear",
+          name: "Footwear",
         },
       ],
     },
     {
       id: 3,
-      label: "Menú",
+      label: "About us",
       items: [
         {
           id: 1,
           href: "#",
-          name: "menú",
+          name: "about us",
         },
       ],
     },
+    {
+      id:4,
+      label: "Help",
+      items:[
+        {
+          id: 1,
+          href:"#",
+          name: "help"
+        }
+      ]
+    }
   ];
 
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);

@@ -16,17 +16,25 @@ function CardProduct({ product }) {
     navigate(`/product/${product.id}`);
   };
 
+  // Toma la primera imagen del array thumbnails o usa una imagen por defecto
+  const firstThumbnail =
+    product.thumbnails?.length > 0
+      ? product.thumbnails[0]
+      : "";
+
   return (
-    <Card onClick={handleNavigation} className="cursor-pointer">
+    <Card onClick={handleNavigation} className="cursor-pointer w-full lg:max-w-[360px]">
       <CardHeader>
         <CardTitle className="flex justify-center mb-10">
           <img
-            src={product.image}
+            src={firstThumbnail}
             alt={product.title}
             className="h-64 object-cover transition duration-300 hover:scale-110"
           />
         </CardTitle>
-        <CardDescription className="text-base md:text-lg font-semibold">{product.title}</CardDescription>
+        <CardDescription className="text-base md:text-lg font-semibold">
+          {product.title}
+        </CardDescription>
       </CardHeader>
       <CardContent>
         <p className="text-xl font-semibold">${product.price}</p>

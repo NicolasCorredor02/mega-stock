@@ -23,8 +23,8 @@ function ItemDetail({ product }) {
   const { addToCart } = useContext(CartContext);
 
   const handleAddToCart = () => {
-    addToCart(product, stateItemCount)
-  }
+    addToCart(product, stateItemCount);
+  };
 
   const handleStateCount = (newCount) => {
     setStateItemCount(newCount);
@@ -34,13 +34,15 @@ function ItemDetail({ product }) {
     <section className="grid grid-cols-1 md:grid-cols-2 gap-14">
       <Carousel>
         <CarouselContent>
-          <CarouselItem className="flex justify-center items-center">
-            <img
-              className="max-h-[500px]"
-              src={product.image}
-              alt={product.description}
-            />
-          </CarouselItem>
+          {product.thumbnails.map((url) => {
+            <CarouselItem className="flex justify-center items-center">
+              <img
+                className="max-h-[500px]"
+                src={url}
+                alt={product.description}
+              />
+            </CarouselItem>;
+          })}
         </CarouselContent>
         <CarouselPrevious />
         <CarouselNext />

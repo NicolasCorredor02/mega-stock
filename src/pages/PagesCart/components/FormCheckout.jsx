@@ -93,7 +93,7 @@ function FormCheckout() {
   });
 
   return (
-    <Card className="flex flex-col w-full md:w-1/4 bg-white">
+    <Card className="flex flex-col mx-auto w-full md:w-2/3 lg:w-5/12 bg-white">
       <CardHeader>
         <CardTitle className="text-2xl md:text-3xl">Generate order</CardTitle>
         <CardDescription>

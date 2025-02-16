@@ -4,16 +4,20 @@ import { useNavigate } from "react-router";
 import { Button } from "@/components/ui/button";
 
 function Item({ product }) {
-    const navigate = useNavigate()
+  const navigate = useNavigate();
 
-    const handleNavigation = () => {
-        navigate(`/product/${product.id}`)
-    }
- 
+  const handleNavigation = () => {
+    navigate(`/product/${product.id}`);
+  };
+
+  // Toma la primera imagen del array thumbnails o usa una imagen por defecto
+  const firstThumbnail =
+    product.thumbnails?.length > 0 ? product.thumbnails[0] : "";
+
   return (
-    <div className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition duration-300 h-[300px] md:h-[350px]"> 
+    <div onClick={handleNavigation} className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition duration-300 h-[300px] md:h-[350px] min-w-[300px]">
       <img
-        src={product.image}
+        src={firstThumbnail}
         alt={product.description}
         className="w-full object-cover transform group-hover:scale-105 transition duration-300"
       />

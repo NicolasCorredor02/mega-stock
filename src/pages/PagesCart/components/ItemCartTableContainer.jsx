@@ -12,12 +12,12 @@ function ItemCartTableContainer() {
       {cart.length > 0 ? (
         <ItemCartTable cartProducts={cart} />
       ) : (
-        <div className="flex flex-col items-center justify-center w-full md:w-3/4 h-[80vh] gap-7">
+        <div className="flex flex-col items-center justify-center w-full lg:w-3/4 h-[50vh] gap-6">
             <FontAwesomeIcon
-            className="text-slate-400 text-5xl"
+            className="text-slate-400 text-4xl"
             icon={faCircleXmark}
           />
-          <p className="text-center text-xl md:text-3xl">Opps! Your shopping cart is empty.</p>
+          <p className="text-center text-lg md:text-2xl">Opps! Your shopping cart is empty.</p>
           
         </div>
       )}
